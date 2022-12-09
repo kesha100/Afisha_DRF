@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Director, Movie, Review
-from .serializers import DirectorSerializer, MovieSerializer, ReviewSerializer, MoviesReviewsSerializer
+from .serializers import *
 from rest_framework import generics
 
 
@@ -39,6 +39,25 @@ class ReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # @api_view(['GET', 'POST'])
 # def director_view(request):
 #     if request.method == 'GET':
@@ -46,6 +65,10 @@ class ReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 #         data = DirectorSerializer(directors, many=True).data
 #         return Response(data=data)
 #     else:
+#         serializer = DirectorValidSerializer(data=request.data)
+#         if not serializer.is_valid():
+#             return Response(status=status.HTTP_406_NOT_ACCEPTABLE,
+#                             data={'error': serializer.errors})
 #         name = request.data.get('name', '')
 #         # print(name)
 #         director = Director.objects.create(name=name)
@@ -153,3 +176,14 @@ class ReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 #         review = Review.objects.create(author_id=author_id, text=text, movie_id=movie_id, stars=stars)
 #         return Response(data={'message': 'review was created and changed',
 #                               'review': ReviewSerializer(review).data})
+
+
+
+
+
+
+
+
+
+
+#

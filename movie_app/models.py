@@ -23,8 +23,8 @@ class Movie(models.Model):
         return self.title
 
     def rating(self):
-        list_of_ratings = [rating.stars for rating in self.reviews.all()]
-        return sum(list_of_ratings) / len(list_of_ratings)
+            lst = [review.stars for review in self.reviews.all()]
+            return (sum(lst) / len(lst)) if len(lst) != 0 else "No reviews yet"
 
 
 class Review(models.Model):
